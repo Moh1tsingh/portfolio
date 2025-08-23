@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+/* Terminal-style fonts */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-jetbrains);
+}
+
+body {
+  font-family: var(--font-inter);
+}
+
+/* Pixelated text effect */
+.pixelated {
+  text-rendering: optimizeSpeed;
+  font-smooth: never;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+}
+
+/* Terminal cursor effect */
+.cursor-blink::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Custom scrollbar for terminal feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+/* Selection styling */
+::selection {
+  background: #333333;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: #333333;
+  color: #ffffff;
+}
