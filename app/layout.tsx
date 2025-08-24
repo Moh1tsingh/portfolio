@@ -100,8 +100,10 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="canonical" href="https://moh1t.com" />
-        <meta name="theme-color" content="#000000" />
         <meta name="color-scheme" content="dark" />
+        <meta name="mobile-web-app-capable" content="no" />
+        <meta name="apple-mobile-web-app-capable" content="no" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="icon"
@@ -115,8 +117,6 @@ export default function RootLayout({
           sizes="32x32"
           href="/favicon-32x32.png"
         />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className={`${inter.variable} ${jetbrains.variable} antialiased`}>
         <div className="min-h-screen w-full bg-black text-white">
