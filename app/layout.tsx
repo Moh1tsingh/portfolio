@@ -120,7 +120,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${jetbrains.variable} antialiased`}>
         <div className="min-h-screen w-full bg-black text-white">
-          <div className="max-w-4xl mx-auto px-6 py-8">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
             <Navbar />
             {children}
             <Analytics />
