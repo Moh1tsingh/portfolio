@@ -19,7 +19,7 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://moh1t.com"),
   title:
-    "Mohitsingh Thakur - Full Stack Developer | Backend | System Architect",
+    "Mohitsingh Thakur - Full Stack Developer ",
   description:
     "Full Stack Developer specializing in backend development, system architecture, and cloud infrastructure. Expert in Node.js, PostgreSQL, AWS, and building scalable web applications.",
   keywords: [
