@@ -1,1 +1,1 @@
-Nothing, its my portfolio bruh:)
+Nothing, its my portfolio:)
