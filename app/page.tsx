@@ -28,42 +28,88 @@ export default function Home() {
           <h2 className="text-xl sm:text-2xl font-mono font-semibold">
             $ ps aux --services
           </h2>
-          <div className="space-y-3 sm:space-y-4">
-            <div className="flex items-center gap-3 font-mono text-xs sm:text-sm">
-              <span className="text-green-400">●</span>
-              <span className="text-white">api-design</span>
-              <span className="text-green-400">RUNNING</span>
-              <span className="text-white/60">REST & service APIs, auth layers, rate limiting</span>
+          {/* Desktop: aligned grid */}
+          <div className="hidden sm:grid grid-cols-[auto_auto_auto_1fr] gap-x-4 gap-y-3 font-mono text-sm items-center">
+            <span className="text-green-400">●</span>
+            <span className="text-white">api-design</span>
+            <span className="text-green-400">RUNNING</span>
+            <span className="text-white/60">REST & service APIs, auth layers, rate limiting</span>
+
+            <span className="text-blue-400">●</span>
+            <span className="text-white">database-arch</span>
+            <span className="text-green-400">RUNNING</span>
+            <span className="text-white/60">Schema design, query optimization, migrations (30+ table systems)</span>
+
+            <span className="text-yellow-400">●</span>
+            <span className="text-white">payment-systems</span>
+            <span className="text-green-400">RUNNING</span>
+            <span className="text-white/60">Billing integrations, subscription workflows, ledger design</span>
+
+            <span className="text-purple-400">●</span>
+            <span className="text-white">cloud-infra</span>
+            <span className="text-green-400">RUNNING</span>
+            <span className="text-white/60">AWS (EC2, RDS, CloudFront, SQS), Docker, CI/CD pipelines</span>
+
+            <span className="text-cyan-400">●</span>
+            <span className="text-white">multi-tenant-saas</span>
+            <span className="text-green-400">RUNNING</span>
+            <span className="text-white/60">Tenant isolation, RBAC, org-level access control</span>
+
+            <span className="text-orange-400">●</span>
+            <span className="text-white">internal-tooling</span>
+            <span className="text-green-400">RUNNING</span>
+            <span className="text-white/60">Workflow automation, admin dashboards, ops tooling</span>
+          </div>
+
+          {/* Mobile: stacked layout */}
+          <div className="sm:hidden space-y-3 font-mono text-xs">
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-green-400">●</span>
+                <span className="text-white">api-design</span>
+                <span className="text-green-400">RUNNING</span>
+              </div>
+              <div className="text-white/60 pl-5">REST & service APIs, auth layers, rate limiting</div>
             </div>
-            <div className="flex items-center gap-3 font-mono text-xs sm:text-sm">
-              <span className="text-blue-400">●</span>
-              <span className="text-white">database-arch</span>
-              <span className="text-green-400">RUNNING</span>
-              <span className="text-white/60">Schema design, query optimization, migrations (30+ table systems)</span>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-blue-400">●</span>
+                <span className="text-white">database-arch</span>
+                <span className="text-green-400">RUNNING</span>
+              </div>
+              <div className="text-white/60 pl-5">Schema design, query optimization, migrations (30+ table systems)</div>
             </div>
-            <div className="flex items-center gap-3 font-mono text-xs sm:text-sm">
-              <span className="text-yellow-400">●</span>
-              <span className="text-white">payment-systems</span>
-              <span className="text-green-400">RUNNING</span>
-              <span className="text-white/60">Billing integrations, subscription workflows, ledger design</span>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-yellow-400">●</span>
+                <span className="text-white">payment-systems</span>
+                <span className="text-green-400">RUNNING</span>
+              </div>
+              <div className="text-white/60 pl-5">Billing integrations, subscription workflows, ledger design</div>
             </div>
-            <div className="flex items-center gap-3 font-mono text-xs sm:text-sm">
-              <span className="text-purple-400">●</span>
-              <span className="text-white">cloud-infra</span>
-              <span className="text-green-400">RUNNING</span>
-              <span className="text-white/60">AWS (EC2, RDS, CloudFront, SQS), Docker, CI/CD pipelines</span>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-purple-400">●</span>
+                <span className="text-white">cloud-infra</span>
+                <span className="text-green-400">RUNNING</span>
+              </div>
+              <div className="text-white/60 pl-5">AWS (EC2, RDS, CloudFront, SQS), Docker, CI/CD pipelines</div>
             </div>
-            <div className="flex items-center gap-3 font-mono text-xs sm:text-sm">
-              <span className="text-cyan-400">●</span>
-              <span className="text-white">multi-tenant-saas</span>
-              <span className="text-green-400">RUNNING</span>
-              <span className="text-white/60">Tenant isolation, RBAC, org-level access control</span>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-cyan-400">●</span>
+                <span className="text-white">multi-tenant-saas</span>
+                <span className="text-green-400">RUNNING</span>
+              </div>
+              <div className="text-white/60 pl-5">Tenant isolation, RBAC, org-level access control</div>
             </div>
-            <div className="flex items-center gap-3 font-mono text-xs sm:text-sm">
-              <span className="text-orange-400">●</span>
-              <span className="text-white">internal-tooling</span>
-              <span className="text-green-400">RUNNING</span>
-              <span className="text-white/60">Workflow automation, admin dashboards, ops tooling</span>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-orange-400">●</span>
+                <span className="text-white">internal-tooling</span>
+                <span className="text-green-400">RUNNING</span>
+              </div>
+              <div className="text-white/60 pl-5">Workflow automation, admin dashboards, ops tooling</div>
             </div>
           </div>
 

@@ -49,11 +49,11 @@ export default function Experience() {
             </div>
           </div>
           <p className="text-white/60 font-mono text-xs sm:text-sm leading-relaxed">
-            Backend engineer on a SaaS product serving multiple organizations. I
+            Backend engineer on a SaaS products serving multiple organizations. I
             own core systems — multi-tenant architecture, payment integrations,
             API design, and cloud infrastructure. Day-to-day involves shipping
             features, designing database schemas, writing migrations, and
-            keeping production stable on AWS. I work across the stack when needed
+            keeping productions stable. I work across the stack when needed
             but my focus is backend systems and infrastructure.
           </p>
         </div>
@@ -85,8 +85,7 @@ export default function Experience() {
             Sole backend engineer from day one. No senior, no handholding — I
             owned the entire backend and its DevOps. Wrote production code,
             designed the database layer, set up deployment pipelines, and managed
-            cloud infrastructure solo. Shipped to production independently
-            within my first week. Transitioned to a full-time role after six
+            cloud infrastructure solo. Shipped to production independently ghs. Transitioned to a full-time role after six
             months.
           </p>
         </div>

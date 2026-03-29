@@ -61,7 +61,7 @@ export default function Projects() {
                   Stack:
                 </span>
                 <span className="text-white">
-                  Node.js (TypeScript) · PostgreSQL · AWS (EC2, RDS) · Docker
+                  Node.js (TypeScript) · PostgreSQL · AWS (EBS-EC2, RDS) · Docker
                 </span>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
