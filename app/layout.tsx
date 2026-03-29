@@ -18,8 +18,10 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://moh1t.com"),
-  title:
-    "Mohitsingh Thakur - Full Stack Developer ",
+  title: {
+    default: "Mohitsingh Thakur - Full Stack Developer | Portfolio",
+    template: "%s | Mohitsingh Thakur",
+  },
   description:
     "Full Stack Developer specializing in backend development, system architecture, and cloud infrastructure. Expert in Node.js, PostgreSQL, AWS, and building scalable web applications.",
   keywords: [
@@ -62,7 +64,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://moh1t.com",
-    siteName: "Mohitsingh Thakur Portfolio",
+    siteName: "Mohitsingh Thakur",
     title: "Mohitsingh Thakur - Full Stack Developer",
     description:
       "Full Stack Developer specializing in backend development, system architecture, and cloud infrastructure. Expert in Node.js, PostgreSQL, AWS, and building scalable web applications.",
@@ -89,6 +91,9 @@ export const metadata: Metadata = {
   },
   category: "technology",
   classification: "Portfolio",
+  other: {
+    "theme-color": "#000000",
+  },
 };
 
 export default function RootLayout({
@@ -119,6 +124,43 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${jetbrains.variable} antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Mohitsingh Thakur",
+              url: "https://moh1t.com",
+              jobTitle: "Product Engineer",
+              worksFor: {
+                "@type": "Organization",
+                name: "Your Brand Mate",
+              },
+              knowsAbout: [
+                "JavaScript",
+                "TypeScript",
+                "React",
+                "Next.js",
+                "Node.js",
+                "PostgreSQL",
+                "AWS",
+                "Docker",
+                "System Architecture",
+                "REST APIs",
+              ],
+              sameAs: [
+                "https://github.com/moh1tsingh",
+                "https://linkedin.com/in/mohitsingh-thakur",
+                "https://x.com/is_mohitsingh",
+              ],
+              alumniOf: {
+                "@type": "EducationalOrganization",
+                name: "B.Tech Computer Science",
+              },
+            }),
+          }}
+        />
         <div className="min-h-screen w-full bg-black text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
             <Navbar />

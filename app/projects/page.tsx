@@ -1,4 +1,19 @@
+import { Metadata } from "next";
 import Footer from "../components/Footer";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Portfolio of full-stack projects by Mohitsingh Thakur including Sentilizer (AI sentiment analysis) and DSA with JavaScript npm library with 600+ downloads.",
+  openGraph: {
+    title: "Projects - Mohitsingh Thakur",
+    description:
+      "Full-stack projects including AI sentiment analysis tools and npm libraries.",
+  },
+  alternates: {
+    canonical: "https://moh1t.com/projects",
+  },
+};
 
 export default function Projects() {
   return (
@@ -104,7 +119,7 @@ export default function Projects() {
                 <span className="text-white/60 min-w-[80px] sm:min-w-[100px]">
                   Downloads:
                 </span>
-                <span className="text-white">450+ downloads</span>
+                <span className="text-white">600+ downloads</span>
               </div>
               <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                 <span className="text-white/60 min-w-[80px] sm:min-w-[100px]">

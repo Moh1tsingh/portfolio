@@ -47,9 +47,9 @@ export default function Home() {
               </div>
               <div className="pl-3 sm:pl-4 space-y-1 text-white/60 font-mono text-xs sm:text-sm">
                 <div>├─ Node.js/Express</div>
-                <div>├─ PostgreSQL</div>
+                <div>├─ PostgreSQL (Mostly)</div>
                 <div>├─ REST APIs</div>
-                <div>└─ Server Architecture</div>
+                <div>└─ Server Architecture, Microservices,etc</div>
               </div>
             </div>
 
@@ -58,8 +58,8 @@ export default function Home() {
                 <span className="text-yellow-400">●</span> Cloud & DevOps
               </div>
               <div className="pl-3 sm:pl-4 space-y-1 text-white/60 font-mono text-xs sm:text-sm">
-                <div>├─ AWS (EC2, S3, CloudFront)</div>
-                <div>├─ RDS, Lambda</div>
+                <div>├─ AWS (EC2, S3, CDNs, Lambda, EBS, ECS)</div>
+                <div>├─ RDS, SQS </div>
                 <div>├─ Docker</div>
                 <div>└─ CI/CD Pipelines</div>
               </div>
@@ -72,9 +72,8 @@ export default function Home() {
               </div>
               <div className="pl-3 sm:pl-4 space-y-1 text-white/60 font-mono text-xs sm:text-sm">
                 <div>├─ Git/GitHub</div>
-                <div>├─ VS Code/Cursor</div>
-                <div>├─ Terminal/CLI</div>
-                <div>└─ Postman/Insomnia</div>
+                <div>├─ Claude Code :)</div>
+                <div>├─ Terminal/CLI - this is where i live.</div>
               </div>
             </div>
           </div>

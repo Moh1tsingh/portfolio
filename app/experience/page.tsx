@@ -1,4 +1,19 @@
+import { Metadata } from "next";
 import Footer from "../components/Footer";
+
+export const metadata: Metadata = {
+  title: "Experience & Education",
+  description:
+    "Product Engineer at Your Brand Mate. B.Tech in Computer Science. Full-stack development experience with Node.js, React, PostgreSQL, and AWS.",
+  openGraph: {
+    title: "Experience & Education - Mohitsingh Thakur",
+    description:
+      "Product Engineer at Your Brand Mate with expertise in full-stack development and cloud infrastructure.",
+  },
+  alternates: {
+    canonical: "https://moh1t.com/experience",
+  },
+};
 
 export default function Experience() {
   return (

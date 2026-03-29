@@ -23,6 +23,13 @@ function Navbar() {
         >
           [experience]
         </Link>
+        <Link
+          href="/blogs"
+          className="text-base sm:text-lg font-mono hover:text-white/70 transition-colors duration-200"
+        >
+          [blogs]
+        </Link>
+        
       </div>
     </nav>
   );
