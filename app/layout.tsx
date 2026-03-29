@@ -19,31 +19,29 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://moh1t.com"),
   title: {
-    default: "Mohitsingh Thakur - Full Stack Developer | Portfolio",
+    default: "Mohitsingh Thakur - Backend Engineer | Portfolio",
     template: "%s | Mohitsingh Thakur",
   },
   description:
-    "Full Stack Developer specializing in backend development, system architecture, and cloud infrastructure. Expert in Node.js, PostgreSQL, AWS, and building scalable web applications.",
+    "Backend engineer specializing in multi-tenant SaaS, payment systems, and cloud infrastructure. Node.js, PostgreSQL, AWS.",
   keywords: [
     "Mohitsingh Thakur",
     "Mohit Singh",
     "Mohit Singh Thakur",
     "Mohit Thakur",
-    "Full Stack Developer",
-    "Backend Developer",
+    "Backend Engineer",
     "System Architect",
     "Node.js Developer",
     "PostgreSQL Developer",
     "AWS Developer",
-    "JavaScript Developer",
-    "React Developer",
-    "Next.js Developer",
+    "SaaS Developer",
+    "Multi-tenant Architecture",
+    "Payment Systems",
     "Cloud Infrastructure",
     "API Development",
     "Database Design",
     "DevOps Engineer",
     "Software Engineer",
-    "Web Developer",
     "Portfolio",
   ],
   authors: [{ name: "Mohitsingh Thakur" }],
@@ -65,9 +63,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://moh1t.com",
     siteName: "Mohitsingh Thakur",
-    title: "Mohitsingh Thakur - Full Stack Developer",
+    title: "Mohitsingh Thakur - Backend Engineer",
     description:
-      "Full Stack Developer specializing in backend development, system architecture, and cloud infrastructure. Expert in Node.js, PostgreSQL, AWS, and building scalable web applications.",
+      "Backend engineer specializing in multi-tenant SaaS, payment systems, and cloud infrastructure. Node.js, PostgreSQL, AWS.",
     images: [
       {
         url: "/og-image.jpg",
@@ -79,9 +77,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohitsingh Thakur - Full Stack Developer",
+    title: "Mohitsingh Thakur - Backend Engineer",
     description:
-      "Full Stack Developer specializing in backend development, system architecture, and cloud infrastructure.",
+      "Backend engineer specializing in multi-tenant SaaS, payment systems, and cloud infrastructure.",
     images: ["/og-image.jpg"],
     creator: "@is_mohitsingh",
     site: "@is_mohitsingh",
@@ -132,7 +130,7 @@ export default function RootLayout({
               "@type": "Person",
               name: "Mohitsingh Thakur",
               url: "https://moh1t.com",
-              jobTitle: "Product Engineer",
+              jobTitle: "Backend Engineer",
               worksFor: {
                 "@type": "Organization",
                 name: "Your Brand Mate",
