@@ -15,73 +15,62 @@ export default function Home() {
 
         <div className="space-y-3 sm:space-y-4 max-w-3xl">
           <div className="text-white/90 font-mono text-base sm:text-lg leading-tight">
-            Full Stack Developer. I write code. I ship. I break things… then fix
-            them. More into backends than frontends, I enjoy designing systems,
-            scaling deployments, and diving deep into how the web really works.
+            I build backend systems that run in production.
           </div>
-        
+          <div className="text-white/60 font-mono text-sm sm:text-base leading-tight">
+            Backend engineer at a startup. I work on multi-tenant SaaS, payment systems, and cloud infrastructure.
+          </div>
         </div>
       </section>
 
       <section className="pt-6 sm:pt-8 border-t border-white/20">
         <div className="space-y-4 sm:space-y-6">
           <h2 className="text-xl sm:text-2xl font-mono font-semibold">
-            $ systemctl status
+            $ ps aux --services
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-            <div className="space-y-2 sm:space-y-3">
-              <div className="text-white/80 font-mono text-xs sm:text-sm">
-                <span className="text-green-400">●</span> Frontend Stack
-              </div>
-              <div className="pl-3 sm:pl-4 space-y-1 text-white/60 font-mono text-xs sm:text-sm">
-                <div>├─ JavaScript/TypeScript</div>
-                <div>├─ React.js</div>
-                <div>├─ Next.js</div>
-                <div>└─ HTML/CSS</div>
-              </div>
+          <div className="space-y-3 sm:space-y-4">
+            <div className="flex items-center gap-3 font-mono text-xs sm:text-sm">
+              <span className="text-green-400">●</span>
+              <span className="text-white">api-design</span>
+              <span className="text-green-400">RUNNING</span>
+              <span className="text-white/60">REST & service APIs, auth layers, rate limiting</span>
             </div>
-
-            <div className="space-y-2 sm:space-y-3">
-              <div className="text-white/80 font-mono text-xs sm:text-sm">
-                <span className="text-blue-400">●</span> Backend & Database
-              </div>
-              <div className="pl-3 sm:pl-4 space-y-1 text-white/60 font-mono text-xs sm:text-sm">
-                <div>├─ Node.js/Express</div>
-                <div>├─ PostgreSQL (Mostly)</div>
-                <div>├─ REST APIs</div>
-                <div>└─ Server Architecture, Microservices,etc</div>
-              </div>
+            <div className="flex items-center gap-3 font-mono text-xs sm:text-sm">
+              <span className="text-blue-400">●</span>
+              <span className="text-white">database-arch</span>
+              <span className="text-green-400">RUNNING</span>
+              <span className="text-white/60">Schema design, query optimization, migrations (30+ table systems)</span>
             </div>
-
-            <div className="space-y-2 sm:space-y-3">
-              <div className="text-white/80 font-mono text-xs sm:text-sm">
-                <span className="text-yellow-400">●</span> Cloud & DevOps
-              </div>
-              <div className="pl-3 sm:pl-4 space-y-1 text-white/60 font-mono text-xs sm:text-sm">
-                <div>├─ AWS (EC2, S3, CDNs, Lambda, EBS, ECS)</div>
-                <div>├─ RDS, SQS </div>
-                <div>├─ Docker</div>
-                <div>└─ CI/CD Pipelines</div>
-              </div>
+            <div className="flex items-center gap-3 font-mono text-xs sm:text-sm">
+              <span className="text-yellow-400">●</span>
+              <span className="text-white">payment-systems</span>
+              <span className="text-green-400">RUNNING</span>
+              <span className="text-white/60">Billing integrations, subscription workflows, ledger design</span>
             </div>
-
-            <div className="space-y-2 sm:space-y-3">
-              <div className="text-white/80 font-mono text-xs sm:text-sm">
-                <span className="text-purple-400">●</span> Tools & Version
-                Control
-              </div>
-              <div className="pl-3 sm:pl-4 space-y-1 text-white/60 font-mono text-xs sm:text-sm">
-                <div>├─ Git/GitHub</div>
-                <div>├─ Claude Code :)</div>
-                <div>├─ Terminal/CLI - this is where i live.</div>
-              </div>
+            <div className="flex items-center gap-3 font-mono text-xs sm:text-sm">
+              <span className="text-purple-400">●</span>
+              <span className="text-white">cloud-infra</span>
+              <span className="text-green-400">RUNNING</span>
+              <span className="text-white/60">AWS (EC2, RDS, CloudFront, SQS), Docker, CI/CD pipelines</span>
+            </div>
+            <div className="flex items-center gap-3 font-mono text-xs sm:text-sm">
+              <span className="text-cyan-400">●</span>
+              <span className="text-white">multi-tenant-saas</span>
+              <span className="text-green-400">RUNNING</span>
+              <span className="text-white/60">Tenant isolation, RBAC, org-level access control</span>
+            </div>
+            <div className="flex items-center gap-3 font-mono text-xs sm:text-sm">
+              <span className="text-orange-400">●</span>
+              <span className="text-white">internal-tooling</span>
+              <span className="text-green-400">RUNNING</span>
+              <span className="text-white/60">Workflow automation, admin dashboards, ops tooling</span>
             </div>
           </div>
 
           <div className="pt-3 sm:pt-4 border-t border-white/10">
             <div className="text-white/80 font-mono text-xs sm:text-sm">
               <span className="text-yellow-400">●</span> Current Status:{" "}
-              <span className="text-green-400">Building something awesome</span>
+              <span className="text-green-400">shipping production systems</span>
             </div>
             <div className="text-white/60 font-mono text-xs sm:text-sm mt-1">
               Last updated:{" "}
