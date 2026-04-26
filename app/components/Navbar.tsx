@@ -21,7 +21,7 @@ export default function Navbar() {
       >
         MT
       </Link>
-      <div className="flex items-center gap-5 sm:gap-6">
+      <div className="flex items-center gap-5">
         {links.map((link) => {
           const isActive =
             link.href === "/"

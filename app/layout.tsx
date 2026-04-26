@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import GridLine from "./components/GridLine";
 import MobileDock from "./components/MobileDock";
+import VisitorCount from "./components/VisitorCount";
 import { Analytics } from "@vercel/analytics/next";
 
 const googleSansCode = Google_Sans_Code({
@@ -152,6 +153,9 @@ export default function RootLayout({
                 priority
                 className="h-full w-full object-cover opacity-80"
               />
+              <div className="absolute bottom-4 right-7 z-10 hidden sm:block">
+                <VisitorCount />
+              </div>
             </div>
             <GridLine />
             {children}

@@ -1,9 +1,7 @@
-import Image from "next/image";
 import Footer from "./components/Footer";
 import GridLine from "./components/GridLine";
 import AnimatedSection from "./components/AnimatedSection";
 import AnimatedItem from "./components/AnimatedItem";
-import VisitorCount from "./components/VisitorCount";
 
 const notes = [
   "I have been building production software for a little over a year, mostly inside startup-paced teams where shipping and ownership matter.",
@@ -15,9 +13,9 @@ export default function Home() {
   return (
     <main>
       {/* Hero */}
-      <AnimatedSection className="px-7 sm:px-10 py-12 sm:py-16">
+      <AnimatedSection className="px-7 sm:px-10 py-12 sm:py-14">
         <AnimatedItem>
-          <div className="flex flex-col gap-7 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-7 ">
             <div className="max-w-2xl">
               <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-[var(--text)]">
                 Mohitsingh Thakur
@@ -34,20 +32,6 @@ export default function Home() {
                 <span>1+ year in production software</span>
               </div>
             </div>
-
-            <div className="hidden items-center gap-5 sm:flex sm:flex-col sm:items-end">
-              {/* <div className="relative size-40 shrink-0 overflow-hidden rounded-xl border border-[var(--border-hover)] bg-[var(--bg-card)] opacity-90 shadow-lg shadow-black/30">
-                <Image
-                  src="/me.jpeg"
-                  alt="Mohitsingh Thakur"
-                  width={160}
-                  height={160}
-                  priority
-                  className="h-full w-full object-cover grayscale"
-                />
-              </div> */}
-              <VisitorCount />
-            </div>
           </div>
         </AnimatedItem>
       </AnimatedSection>
@@ -55,7 +39,7 @@ export default function Home() {
       <GridLine />
 
       {/* Notes */}
-      <AnimatedSection className="px-7 sm:px-10 py-9 sm:py-12">
+      <AnimatedSection className="px-7 sm:px-10 py-8 sm:py-10">
         <AnimatedItem>
           <h2 className="text-xl sm:text-2xl font-semibold text-[var(--text-faint)] mb-6">
             Notes
