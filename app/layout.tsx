@@ -66,9 +66,9 @@ export const metadata: Metadata = {
       "Backend engineer specializing in multi-tenant SaaS, payment systems, and cloud infrastructure. Node.js, PostgreSQL, AWS.",
     images: [
       {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
+        url: "/og-image.png",
+        width: 1800,
+        height: 982,
         alt: "Mohitsingh Thakur portfolio homepage",
       },
     ],
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     title: "Mohitsingh Thakur - Backend Engineer",
     description:
       "Backend engineer specializing in multi-tenant SaaS, payment systems, and cloud infrastructure.",
-    images: ["/opengraph-image"],
+    images: ["/og-image.png"],
     creator: "@is_mohitsingh",
     site: "@is_mohitsingh",
   },
