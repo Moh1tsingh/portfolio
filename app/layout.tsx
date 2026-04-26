@@ -66,10 +66,10 @@ export const metadata: Metadata = {
       "Backend engineer specializing in multi-tenant SaaS, payment systems, and cloud infrastructure. Node.js, PostgreSQL, AWS.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Mohitsingh Thakur - Full Stack Developer Portfolio",
+        alt: "Mohitsingh Thakur portfolio homepage",
       },
     ],
   },
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     title: "Mohitsingh Thakur - Backend Engineer",
     description:
       "Backend engineer specializing in multi-tenant SaaS, payment systems, and cloud infrastructure.",
-    images: ["/og-image.jpg"],
+    images: ["/opengraph-image"],
     creator: "@is_mohitsingh",
     site: "@is_mohitsingh",
   },
@@ -105,9 +105,10 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="no" />
         <meta name="apple-mobile-web-app-capable" content="no" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       </head>
       <body className={`${googleSansCode.variable} antialiased`}>
         <script
