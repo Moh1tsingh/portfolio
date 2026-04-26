@@ -1,136 +1,81 @@
+import Image from "next/image";
 import Footer from "./components/Footer";
+import GridLine from "./components/GridLine";
+import AnimatedSection from "./components/AnimatedSection";
+import AnimatedItem from "./components/AnimatedItem";
+import VisitorCount from "./components/VisitorCount";
+
+const notes = [
+  "I have been building production software for a little over a year, mostly inside startup-paced teams where shipping and ownership matter.",
+  "My strongest work is the part behind the interface: databases, APIs, auth, queues, payments, cloud deployments, and the small details that keep a product stable.",
+  "I still care about the front end. Not flashy screens for the sake of it, but clean product surfaces that make the system underneath easier to trust.",
+];
 
 export default function Home() {
   return (
-    <main className="space-y-6 sm:space-y-8 px-4 sm:px-6 lg:px-8">
-      <section className="space-y-4 sm:space-y-6">
-        <div className="space-y-2">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-mono font-bold tracking-tight pixelated">
-            Mohitsingh Thakur
-          </h1>
-          <div className="text-base sm:text-lg text-white/80 font-mono">
-            $ whoami
-          </div>
-        </div>
+    <main>
+      {/* Hero */}
+      <AnimatedSection className="px-7 sm:px-10 py-12 sm:py-16">
+        <AnimatedItem>
+          <div className="flex flex-col gap-7 sm:flex-row sm:items-center sm:justify-between">
+            <div className="max-w-2xl">
+              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-[var(--text)]">
+                Mohitsingh Thakur
+              </h1>
+              <p className="mt-3 text-[16px] sm:text-[18px] text-[var(--text-muted)]">
+                I build product backends, cloud infra, and the tools around them.
+              </p>
+              <div className="mt-6 flex flex-wrap items-center gap-2 text-[15px] text-[var(--text-faint)]">
+                <span className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                  currently shipping prod
+                </span>
+                <span>&bull;</span>
+                <span>1+ year in production software</span>
+              </div>
+            </div>
 
-        <div className="space-y-3 sm:space-y-4 max-w-3xl">
-          <div className="text-white/90 font-mono text-base sm:text-lg leading-tight">
-            I build backend systems that run in production.
+            <div className="hidden items-center gap-5 sm:flex sm:flex-col sm:items-end">
+              {/* <div className="relative size-40 shrink-0 overflow-hidden rounded-xl border border-[var(--border-hover)] bg-[var(--bg-card)] opacity-90 shadow-lg shadow-black/30">
+                <Image
+                  src="/me.jpeg"
+                  alt="Mohitsingh Thakur"
+                  width={160}
+                  height={160}
+                  priority
+                  className="h-full w-full object-cover grayscale"
+                />
+              </div> */}
+              <VisitorCount />
+            </div>
           </div>
-          <div className="text-white/60 font-mono text-sm sm:text-base leading-tight">
-            Backend engineer at a startup. I work on multi-tenant SaaS, payment systems, and cloud infrastructure.
-          </div>
-        </div>
-      </section>
+        </AnimatedItem>
+      </AnimatedSection>
 
-      <section className="pt-6 sm:pt-8 border-t border-white/20">
-        <div className="space-y-4 sm:space-y-6">
-          <h2 className="text-xl sm:text-2xl font-mono font-semibold">
-            $ ps aux --services
+      <GridLine />
+
+      {/* Notes */}
+      <AnimatedSection className="px-7 sm:px-10 py-9 sm:py-12">
+        <AnimatedItem>
+          <h2 className="text-xl sm:text-2xl font-semibold text-[var(--text-faint)] mb-6">
+            Notes
           </h2>
-          {/* Desktop: aligned grid */}
-          <div className="hidden sm:grid grid-cols-[auto_auto_auto_1fr] gap-x-4 gap-y-3 font-mono text-sm items-center">
-            <span className="text-green-400">●</span>
-            <span className="text-white">api-design</span>
-            <span className="text-green-400">RUNNING</span>
-            <span className="text-white/60">REST & service APIs, auth layers, rate limiting</span>
-
-            <span className="text-blue-400">●</span>
-            <span className="text-white">database-arch</span>
-            <span className="text-green-400">RUNNING</span>
-            <span className="text-white/60">Schema design, query optimization, migrations (30+ table systems)</span>
-
-            <span className="text-yellow-400">●</span>
-            <span className="text-white">payment-systems</span>
-            <span className="text-green-400">RUNNING</span>
-            <span className="text-white/60">Billing integrations, subscription workflows, ledger design</span>
-
-            <span className="text-purple-400">●</span>
-            <span className="text-white">cloud-infra</span>
-            <span className="text-green-400">RUNNING</span>
-            <span className="text-white/60">AWS (EC2, RDS, CloudFront, SQS), Docker, CI/CD pipelines</span>
-
-            <span className="text-cyan-400">●</span>
-            <span className="text-white">multi-tenant-saas</span>
-            <span className="text-green-400">RUNNING</span>
-            <span className="text-white/60">Tenant isolation, RBAC, org-level access control</span>
-
-            <span className="text-orange-400">●</span>
-            <span className="text-white">internal-tooling</span>
-            <span className="text-green-400">RUNNING</span>
-            <span className="text-white/60">Workflow automation, admin dashboards, ops tooling</span>
-          </div>
-
-          {/* Mobile: stacked layout */}
-          <div className="sm:hidden space-y-3 font-mono text-xs">
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-green-400">●</span>
-                <span className="text-white">api-design</span>
-                <span className="text-green-400">RUNNING</span>
-              </div>
-              <div className="text-white/60 pl-5">REST & service APIs, auth layers, rate limiting</div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-blue-400">●</span>
-                <span className="text-white">database-arch</span>
-                <span className="text-green-400">RUNNING</span>
-              </div>
-              <div className="text-white/60 pl-5">Schema design, query optimization, migrations (30+ table systems)</div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-yellow-400">●</span>
-                <span className="text-white">payment-systems</span>
-                <span className="text-green-400">RUNNING</span>
-              </div>
-              <div className="text-white/60 pl-5">Billing integrations, subscription workflows, ledger design</div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-purple-400">●</span>
-                <span className="text-white">cloud-infra</span>
-                <span className="text-green-400">RUNNING</span>
-              </div>
-              <div className="text-white/60 pl-5">AWS (EC2, RDS, CloudFront, SQS), Docker, CI/CD pipelines</div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-cyan-400">●</span>
-                <span className="text-white">multi-tenant-saas</span>
-                <span className="text-green-400">RUNNING</span>
-              </div>
-              <div className="text-white/60 pl-5">Tenant isolation, RBAC, org-level access control</div>
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-orange-400">●</span>
-                <span className="text-white">internal-tooling</span>
-                <span className="text-green-400">RUNNING</span>
-              </div>
-              <div className="text-white/60 pl-5">Workflow automation, admin dashboards, ops tooling</div>
-            </div>
-          </div>
-
-          <div className="pt-3 sm:pt-4 border-t border-white/10">
-            <div className="text-white/80 font-mono text-xs sm:text-sm">
-              <span className="text-yellow-400">●</span> Current Status:{" "}
-              <span className="text-green-400">shipping production systems</span>
-            </div>
-            <div className="text-white/60 font-mono text-xs sm:text-sm mt-1">
-              Last updated:{" "}
-              {new Date().toLocaleDateString("en-US", {
-                month: "short",
-                day: "numeric",
-                year: "numeric",
-              })}
-            </div>
-          </div>
+        </AnimatedItem>
+        <div className="space-y-5 text-[16px] text-[var(--text-muted)] leading-relaxed">
+          {notes.map((note) => (
+            <AnimatedItem key={note}>
+              <p>{note}</p>
+            </AnimatedItem>
+          ))}
         </div>
-      </section>
+      </AnimatedSection>
 
-      <Footer />
+      <GridLine />
+
+      {/* Connect / Footer */}
+      <div className="px-7 sm:px-10 py-9 sm:py-12">
+        <Footer />
+      </div>
     </main>
   );
 }

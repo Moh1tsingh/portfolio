@@ -1,19 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Google_Sans_Code } from "next/font/google";
+import Image from "next/image";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import GridLine from "./components/GridLine";
+import MobileDock from "./components/MobileDock";
 import { Analytics } from "@vercel/analytics/next";
 
-const inter = Inter({
+const googleSansCode = Google_Sans_Code({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-jetbrains",
+  variable: "--font-gsc",
 });
 
 export const metadata: Metadata = {
@@ -90,7 +87,7 @@ export const metadata: Metadata = {
   category: "technology",
   classification: "Portfolio",
   other: {
-    "theme-color": "#000000",
+    "theme-color": "#0a0a0b",
   },
 };
 
@@ -108,20 +105,10 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="no" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       </head>
-      <body className={`${inter.variable} ${jetbrains.variable} antialiased`}>
+      <body className={`${googleSansCode.variable} antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -131,38 +118,44 @@ export default function RootLayout({
               name: "Mohitsingh Thakur",
               url: "https://moh1t.com",
               jobTitle: "Backend Engineer",
-              worksFor: {
-                "@type": "Organization",
-                name: "Your Brand Mate",
-              },
+              worksFor: { "@type": "Organization", name: "Your Brand Mate" },
               knowsAbout: [
-                "JavaScript",
-                "TypeScript",
-                "React",
-                "Next.js",
-                "Node.js",
-                "PostgreSQL",
-                "AWS",
-                "Docker",
-                "System Architecture",
-                "REST APIs",
+                "JavaScript", "TypeScript", "React", "Next.js", "Node.js",
+                "PostgreSQL", "AWS", "Docker", "System Architecture", "REST APIs",
               ],
               sameAs: [
                 "https://github.com/moh1tsingh",
                 "https://linkedin.com/in/mohitsingh-thakur",
                 "https://x.com/is_mohitsingh",
               ],
-              alumniOf: {
-                "@type": "EducationalOrganization",
-                name: "B.Tech Computer Science",
-              },
+              alumniOf: { "@type": "EducationalOrganization", name: "B.Tech Computer Science" },
             }),
           }}
         />
-        <div className="min-h-screen w-full bg-black text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+        <div className="min-h-screen w-full overflow-x-hidden">
+          {/* Main content column with vertical edge lines */}
+          <div className="relative max-w-4xl mx-auto">
+            {/* Vertical edge lines */}
+            <div className="absolute inset-y-0 left-0 w-px bg-[var(--border)] opacity-70 pointer-events-none" />
+            <div className="absolute inset-y-0 right-0 w-px bg-[var(--border)] opacity-70 pointer-events-none" />
+
             <Navbar />
+            <GridLine />
+            {/* Shared visual banner */}
+            <div className="site-visual-banner">
+              <Image
+                src="/gif-bg.gif"
+                alt=""
+                width={960}
+                height={260}
+                unoptimized
+                priority
+                className="h-full w-full object-cover opacity-80"
+              />
+            </div>
+            <GridLine />
             {children}
+            <MobileDock />
             <Analytics />
           </div>
         </div>

@@ -1,38 +1,31 @@
-import React from "react";
+const socials = [
+  { href: "https://github.com/moh1tsingh", label: "GitHub" },
+  {
+    href: "https://www.linkedin.com/in/mohitsingh-thakur-b6794325a",
+    label: "LinkedIn",
+  },
+  { href: "https://x.com/is_mohitsingh", label: "X" },
+  { href: "mailto:mohitsinghthakur19@gmail.com", label: "Mail" },
+];
 
 export default function Footer() {
   return (
-    <footer className="pt-6 sm:pt-8 px-4 sm:px-6 border-t border-white/20">
-      <div className="text-center space-y-3 sm:space-y-4">
-        <div className="text-white/60 font-mono text-xs sm:text-sm">
-          $ cat social.txt
-        </div>
-        <div className="flex justify-center items-center gap-4 sm:gap-6">
+    <footer>
+      <h2 className="text-xl sm:text-2xl font-semibold text-[var(--text-faint)] mb-6">
+        Connect
+      </h2>
+      <div className="flex flex-wrap items-center gap-4 sm:gap-5">
+        {socials.map((social) => (
           <a
-            href="https://github.com/moh1tsingh"
+            key={social.label}
+            href={social.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/70 font-mono text-xs sm:text-sm hover:text-white transition-colors duration-200"
+            className="text-[15px] text-[var(--text-muted)] hover:text-[var(--text)] transition-colors duration-200"
           >
-            [github]
+            {social.label}
           </a>
-          <a
-            href="https://www.linkedin.com/in/mohitsingh-thakur-b6794325a"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/70 font-mono text-xs sm:text-sm hover:text-white transition-colors duration-200"
-          >
-            [linkedin]
-          </a>
-          <a
-            href="https://x.com/is_mohitsingh"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/70 font-mono text-xs sm:text-sm hover:text-white transition-colors duration-200"
-          >
-            [x]
-          </a>
-        </div>
+        ))}
       </div>
     </footer>
   );

@@ -10,10 +10,17 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
+    "@vercel/kv": "^3.0.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.11.0",
+    "motion": "^12.38.0",
     "next": "15.5.7",
     "posthog-js": "^1.260.2",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "tailwind-merge": "^3.5.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

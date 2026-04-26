@@ -1,69 +1,80 @@
 @import "tailwindcss";
 
-/* Terminal-style fonts */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-jetbrains);
+:root {
+  --bg: #0a0a0b;
+  --bg-card: #111113;
+  --border: #17171b;
+  --border-hover: #25252b;
+  --text: #e4e4e7;
+  --text-muted: #71717a;
+  --text-faint: #3f3f46;
+  --accent: #8b95a5;
+  --accent-muted: #8b95a518;
+  --dot: #14141a;
+  --geo: #1e1e26;
 }
 
 body {
-  font-family: var(--font-inter);
+  font-family: var(--font-gsc);
+  background-color: var(--bg);
+  color: var(--text);
 }
 
-/* Pixelated text effect */
-.pixelated {
-  text-rendering: optimizeSpeed;
-  font-smooth: never;
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: unset;
-}
-
-/* Terminal cursor effect */
-.cursor-blink::after {
-  content: "|";
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%,
-  50% {
-    opacity: 1;
-  }
-  51%,
-  100% {
-    opacity: 0;
-  }
-}
-
-/* Custom scrollbar for terminal feel */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: var(--bg);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333333;
-  border-radius: 0;
+  background: var(--border-hover);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555555;
+  background: var(--text-faint);
 }
 
-/* Selection styling */
 ::selection {
-  background: #333333;
-  color: #ffffff;
+  background: var(--accent-muted);
+  color: var(--text);
 }
 
 ::-moz-selection {
-  background: #333333;
-  color: #ffffff;
+  background: var(--accent-muted);
+  color: var(--text);
+}
+
+a {
+  transition: color 0.2s ease;
+}
+
+.site-visual-banner {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  background: var(--bg-card);
+}
+
+.site-visual-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.site-visual-banner::before {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, var(--bg), transparent 18%, transparent 82%, var(--bg)),
+    linear-gradient(180deg, rgba(10, 10, 11, 0.2), rgba(10, 10, 11, 0.38));
+}
+
+@media (min-width: 640px) {
+  .site-visual-banner {
+    height: 190px;
+  }
 }

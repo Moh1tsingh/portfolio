@@ -1,274 +1,148 @@
 import { Metadata } from "next";
 import Footer from "../components/Footer";
+import GridLine from "../components/GridLine";
+import AnimatedSection from "../components/AnimatedSection";
+import AnimatedItem from "../components/AnimatedItem";
 
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Backend systems and production infrastructure built by Mohitsingh Thakur. Multi-tenant SaaS, payment processing, API architecture, and open-source npm libraries.",
+    "Projects by Mohitsingh Thakur: ShellChess terminal chess client, dsa-with-javascript npm library, and production healthcare platform backend.",
   openGraph: {
     title: "Projects - Mohitsingh Thakur",
-    description:
-      "Production backend systems and open-source tools.",
+    description: "Terminal tools, open-source packages, and production backend systems.",
   },
-  alternates: {
-    canonical: "https://moh1t.com/projects",
-  },
+  alternates: { canonical: "https://moh1t.com/projects" },
 };
+
+const projects = [
+  {
+    name: "ShellChess",
+    description:
+      "A terminal chess client I built because I kept switching to a browser tab while CLI AI tools were running on my projects.",
+    work: [
+      "Created a chess workflow that stays inside the terminal instead of another tab, window, or desktop",
+      "Built it for the dead time between prompting an AI coding agent and reviewing its output",
+      "Focused on making the game feel natural for developers already living in the CLI",
+    ],
+    stack: ["Terminal UI", "Lichess", "CLI"],
+    impact:
+      "A small personal tool built from an actual developer workflow annoyance.",
+    links: [
+      { label: "GitHub", href: "https://github.com/Moh1tsingh/shellchess" },
+      { label: "npm", href: "https://www.npmjs.com/package/shellchess" },
+    ],
+  },
+  {
+    name: "dsa-with-javascript",
+    description:
+      "An open-source npm package implementing common data structures and algorithms for JavaScript and TypeScript projects.",
+    work: [
+      "Implemented linked lists, trees, graphs, and sorting algorithms",
+      "Published and versioned the package on npm with TypeScript support",
+      "Kept the code readable so it works as both a utility and a learning reference",
+    ],
+    stack: ["JavaScript", "TypeScript", "Node.js", "npm"],
+    impact: "700+ downloads on npm.",
+    links: [
+      { label: "GitHub", href: "https://github.com/Moh1tsingh/dsa-npm-lib" },
+      { label: "npm", href: "https://www.npmjs.com/package/dsa-with-javascript" },
+    ],
+  },
+  {
+    name: "Healthcare Platform Backend",
+    description:
+      "A production healthcare platform backend for pharmacy workflows, patient records, appointments, prescriptions, follow-ups, billing, and operational audit trails.",
+    work: [
+      "Built and deployed the Express/TypeScript backend with Prisma and PostgreSQL",
+      "Designed a large domain model across pharmacies, patients, appointments, prescriptions, services, waitlists, follow-ups, billing, fax, and audit events",
+      "Deployed the production setup on AWS Elastic Beanstalk with scalable infrastructure around RDS PostgreSQL",
+      "Integrated AWS SES, SQS, Lambda, S3, CloudFront, EventBridge, ACM, and related production services",
+      "Implemented healthcare workflow depth including booking, reminders, file uploads, email flows, Stripe billing, access control, and audit logging",
+    ],
+    stack: [
+      "Node.js",
+      "TypeScript",
+      "Express",
+      "Prisma",
+      "PostgreSQL",
+      "AWS",
+      "Docker",
+      "Stripe",
+    ],
+    impact:
+      "Non-disclosable production system. I can discuss architecture, deployment decisions, and backend ownership at a high level.",
+  },
+];
 
 export default function Projects() {
   return (
-    <main className="space-y-4 sm:space-y-6 px-4 sm:px-6 lg:px-8">
-      <section className="space-y-3 sm:space-y-4">
-        <h1 className="text-2xl sm:text-3xl font-mono font-bold tracking-tight pixelated">
-          $ ls projects/
-        </h1>
-      </section>
+    <main>
+      <AnimatedSection className="px-6 sm:px-8 py-8 sm:py-10">
+        <AnimatedItem>
+          <h1 className="text-xl sm:text-2xl font-semibold text-[var(--text-faint)] mb-6">
+            Projects
+          </h1>
+        </AnimatedItem>
 
-      <section className="space-y-4 sm:space-y-6">
-        {/* Multi-Tenant SaaS Platform */}
-        <div className="space-y-3 sm:space-y-4 p-4 sm:p-6 border border-white/20 rounded">
-          <div className="space-y-2 sm:space-y-3">
-            <h2 className="text-lg sm:text-xl font-mono font-semibold text-white">
-              $ cat multi-tenant-saas/README.md
-            </h2>
-            <div className="space-y-2 sm:space-y-3 text-white/90 font-mono text-xs sm:text-sm">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px]">
-                  Project:
-                </span>
-                <span className="text-white">Multi-Tenant SaaS Platform</span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px] shrink-0">
-                  Description:
-                </span>
-                <span className="text-white">
-                  A multi-tenant SaaS platform serving multiple organizations
-                  with isolated data, role-based access, and org-level controls.
-                </span>
-              </div>
-              <div className="flex flex-col gap-1">
-                <span className="text-white/60">Key Work:</span>
-                <div className="pl-3 sm:pl-4 text-white space-y-1">
-                  <div>├─ Designed a 30+ table PostgreSQL schema with tenant isolation</div>
-                  <div>├─ Built role-based access control system (org admins, members, viewers)</div>
-                  <div>├─ Implemented org-level settings, permissions, and invite flows</div>
-                  <div>└─ Architected API layer handling multi-tenant query scoping</div>
+        <div className="space-y-6">
+          {projects.map((project) => (
+            <AnimatedItem key={project.name}>
+              <div className="space-y-3">
+                <h2 className="text-lg font-semibold">{project.name}</h2>
+                <p className="text-[15px] text-[var(--text-muted)] leading-relaxed">
+                  {project.description}
+                </p>
+                <ul className="space-y-1">
+                  {project.work.map((item) => (
+                    <li
+                      key={item}
+                      className="text-[15px] text-[var(--text-muted)] flex gap-2"
+                    >
+                      <span className="text-[var(--text-faint)] shrink-0">&bull;</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-wrap gap-1.5">
+                  {project.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="text-[12px] text-[var(--text-faint)] px-2 py-0.5 rounded border border-[var(--border)]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
+                <p className="text-[14px] text-[var(--text-faint)]">
+                  {project.impact}
+                </p>
+                {project.links && (
+                  <div className="flex gap-3">
+                    {project.links.map((link) => (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[14px] text-[var(--accent)] hover:text-[var(--text)] transition-colors"
+                      >
+                        {link.label} &rarr;
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px]">
-                  Stack:
-                </span>
-                <span className="text-white">
-                  Node.js (TypeScript) · PostgreSQL · AWS (EBS-EC2, RDS) · Docker
-                </span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px] shrink-0">
-                  Impact:
-                </span>
-                <span className="text-white">
-                  Handles production workloads across multiple tenants.
-                  Designed for horizontal scalability and strict data isolation.
-                </span>
-              </div>
-            </div>
-          </div>
+              <div className="mt-6 h-px bg-[var(--border)]" />
+            </AnimatedItem>
+          ))}
         </div>
+      </AnimatedSection>
 
-        {/* Payment Processing System */}
-        <div className="space-y-3 sm:space-y-4 p-4 sm:p-6 border border-white/20 rounded">
-          <div className="space-y-2 sm:space-y-3">
-            <h2 className="text-lg sm:text-xl font-mono font-semibold text-white">
-              $ cat payment-system/README.md
-            </h2>
-            <div className="space-y-2 sm:space-y-3 text-white/90 font-mono text-xs sm:text-sm">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px]">
-                  Project:
-                </span>
-                <span className="text-white">Payment Processing System</span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px] shrink-0">
-                  Description:
-                </span>
-                <span className="text-white">
-                  End-to-end payment and billing system integrated into a SaaS product.
-                  Handles subscriptions, invoicing, and payment lifecycle events.
-                </span>
-              </div>
-              <div className="flex flex-col gap-1">
-                <span className="text-white/60">Key Work:</span>
-                <div className="pl-3 sm:pl-4 text-white space-y-1">
-                  <div>├─ Integrated third-party payment gateway with webhook handling</div>
-                  <div>├─ Built subscription management with plan upgrades/downgrades</div>
-                  <div>├─ Designed ledger tables for transaction history and audit trails</div>
-                  <div>└─ Implemented retry logic and idempotency for failed payments</div>
-                </div>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px]">
-                  Stack:
-                </span>
-                <span className="text-white">
-                  Node.js (TypeScript) · PostgreSQL · REST APIs · Webhooks
-                </span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px] shrink-0">
-                  Impact:
-                </span>
-                <span className="text-white">
-                  Processes real transactions in production.
-                  Built for reliability with idempotent operations and audit logging.
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* API Gateway & Service Layer */}
-        <div className="space-y-3 sm:space-y-4 p-4 sm:p-6 border border-white/20 rounded">
-          <div className="space-y-2 sm:space-y-3">
-            <h2 className="text-lg sm:text-xl font-mono font-semibold text-white">
-              $ cat api-gateway/README.md
-            </h2>
-            <div className="space-y-2 sm:space-y-3 text-white/90 font-mono text-xs sm:text-sm">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px]">
-                  Project:
-                </span>
-                <span className="text-white">API Gateway & Service Layer</span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px] shrink-0">
-                  Description:
-                </span>
-                <span className="text-white">
-                  Centralized API layer handling authentication, routing,
-                  rate limiting, and service orchestration for a SaaS product.
-                </span>
-              </div>
-              <div className="flex flex-col gap-1">
-                <span className="text-white/60">Key Work:</span>
-                <div className="pl-3 sm:pl-4 text-white space-y-1">
-                  <div>├─ Designed RESTful API architecture with versioned endpoints</div>
-                  <div>├─ Built authentication middleware (JWT, session management)</div>
-                  <div>├─ Implemented rate limiting and request validation</div>
-                  <div>└─ Structured service layer separating business logic from transport</div>
-                </div>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px]">
-                  Stack:
-                </span>
-                <span className="text-white">
-                  Node.js (TypeScript) · Express · PostgreSQL · AWS CloudFront
-                </span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px] shrink-0">
-                  Impact:
-                </span>
-                <span className="text-white">
-                  Powers core product workflows in production.
-                  Optimized for low-latency responses and consistent error handling.
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* dsa-with-javascript */}
-        <div className="space-y-3 sm:space-y-4 p-4 sm:p-6 border border-white/20 rounded">
-          <div className="space-y-2 sm:space-y-3">
-            <h2 className="text-lg sm:text-xl font-mono font-semibold text-white">
-              $ cat dsa-js/README.md
-            </h2>
-            <div className="space-y-2 sm:space-y-3 text-white/90 font-mono text-xs sm:text-sm">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px]">
-                  Project:
-                </span>
-                <span className="text-white">dsa-with-javascript</span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px] shrink-0">
-                  Description:
-                </span>
-                <span className="text-white">
-                  Open-source npm library implementing core data structures
-                  and algorithms in JavaScript. Built for learning and reuse.
-                </span>
-              </div>
-              <div className="flex flex-col gap-1">
-                <span className="text-white/60">Key Work:</span>
-                <div className="pl-3 sm:pl-4 text-white space-y-1">
-                  <div>├─ Implemented linked lists, trees, graphs, sorting algorithms</div>
-                  <div>├─ Published to npm with semantic versioning</div>
-                  <div>└─ Written for clarity — used as a learning reference</div>
-                </div>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px]">
-                  Stack:
-                </span>
-                <span className="text-white">
-                  JavaScript · Node.js · npm
-                </span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px]">
-                  Downloads:
-                </span>
-                <span className="text-white">630+ on npm</span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px]">
-                  Status:
-                </span>
-                <span className="text-green-400">● Live on npm</span>
-              </div>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <span className="text-white/60 min-w-[80px] sm:min-w-[100px]">
-                  Links:
-                </span>
-                <div className="flex flex-wrap gap-2">
-                  <a
-                    href="https://github.com/Moh1tsingh/dsa-npm-lib"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 transition-colors duration-200"
-                  >
-                    [github]
-                  </a>
-                  <a
-                    href="https://www.npmjs.com/package/dsa-with-javascript"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 hover:text-blue-300 transition-colors duration-200"
-                  >
-                    [npm]
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Project Summary */}
-        <div className="pt-3 sm:pt-4 border-t border-white/20">
-          <div className="text-white/60 font-mono text-xs sm:text-sm">
-            $ wc -l projects/* | tail -1
-          </div>
-          <div className="text-white/80 font-mono text-xs sm:text-sm mt-2">
-            Total: 4 | 3 production systems, 1 npm package (630+ downloads)
-          </div>
-        </div>
-      </section>
-      <Footer />
+      <GridLine />
+      <div className="px-6 sm:px-8 py-8 sm:py-10">
+        <Footer />
+      </div>
     </main>
   );
 }
